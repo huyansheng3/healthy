@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/theme_bg_color"
+    android:orientation="vertical">
+
+
+    <LinearLayout style="@style/Register_Input">
+
+        <TextView
+            style="@style/My.TextView._Black"
+            android:layout_width="@dimen/registerLeftWidth"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="昵称" />
+
+        <EditText
+            android:id="@+id/usernicknameEdit"
+            style="@style/Register_Edit"
+            android:hint="请输入昵称" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/Register_Input">
+
+        <TextView
+            style="@style/My.TextView._Black"
+            android:layout_width="@dimen/registerLeftWidth"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="用户名" />
+
+        <EditText
+            android:id="@+id/accountEdit"
+            style="@style/Register_Edit"
+            android:hint="请输入用户名" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/Register_Input">
+
+        <TextView
+            style="@style/My.TextView._Black"
+            android:layout_width="@dimen/registerLeftWidth"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="密码" />
+
+        <EditText
+            android:id="@+id/passwordEdit"
+            style="@style/Register_Edit"
+            android:hint="请输入密码"
+            android:inputType="textPassword" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/Register_Input">
+
+        <TextView
+            style="@style/My.TextView._Black"
+            android:layout_width="@dimen/registerLeftWidth"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="确认密码" />
+
+        <EditText
+            android:id="@+id/ensurePasswordEdit"
+            style="@style/Register_Edit"
+            android:hint="请在此输入密码"
+            android:inputType="textPassword" />
+    </LinearLayout>
+
+
+    <LinearLayout style="@style/Register_Input">
+
+        <TextView
+            style="@style/My.TextView._Black"
+            android:layout_width="@dimen/registerLeftWidth"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="邮箱地址" />
+
+        <EditText
+            android:id="@+id/useremailEdit"
+            style="@style/Register_Edit"
+            android:inputType="textEmailAddress"
+            android:hint="请输入邮箱地址" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/Register_Input">
+
+        <TextView
+            style="@style/My.TextView._Black"
+            android:layout_width="@dimen/registerLeftWidth"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="性别" />
+
+        <RadioGroup
+            android:id="@+id/sexRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/male"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="男" />
+
+            <RadioButton
+                android:id="@+id/female"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="女" />
+        </RadioGroup>
+
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btn_register"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/base_action_bar_height"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:background="@drawable/common_btn"
+        android:text="注册"
+        android:textColor="@color/base_color_text_white"
+        android:textSize="@dimen/text_size_large" />
+
+</LinearLayout>

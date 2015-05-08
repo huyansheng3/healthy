@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/LoginTest.iml" filepath="$PROJECT_DIR$/LoginTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/actionbarsherlock/actionbarsherlock.iml" filepath="$PROJECT_DIR$/actionbarsherlock/actionbarsherlock.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pulltorefresh/pulltorefresh.iml" filepath="$PROJECT_DIR$/pulltorefresh/pulltorefresh.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rocket-chat/rocket-chat.iml" filepath="$PROJECT_DIR$/rocket-chat/rocket-chat.iml" />
+      <module fileurl="file://$PROJECT_DIR$/slibingmenu/slibingmenu.iml" filepath="$PROJECT_DIR$/slibingmenu/slibingmenu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/slibingtab/slibingtab.iml" filepath="$PROJECT_DIR$/slibingtab/slibingtab.iml" />
+    </modules>
+  </component>
+</project>
+

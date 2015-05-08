@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/user_items_avatar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/healthy_logo"
+            android:layout_marginLeft="5dp"
+            />
+
+        <TextView
+            android:id="@+id/user_items_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/user_items_avatar"
+            android:text="风满楼"
+            android:textSize="25sp"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="60dp"
+            />
+
+        </RelativeLayout>
+</LinearLayout>

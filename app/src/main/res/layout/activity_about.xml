@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/about_logo"
+            android:src="@drawable/healthy_logo"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="50dp"
+            />
+
+        <TextView
+            android:id="@+id/about_app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="健康服务"
+            android:textSize="20sp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/about_logo"
+            />
+
+        <TextView
+            android:id="@+id/about_app_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="version1.0"
+            android:textColor="@color/red"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/about_app_name"
+            />
+
+        <TextView
+            android:id="@+id/about_author"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="作者：胡衍生"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="20dp"
+            android:textSize="18sp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/about_app_version"
+            />
+
+        <TextView
+            android:id="@+id/about_contact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:autoLink="email"
+            android:text="联系方式：1211904437@qq.com"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/about_author"
+            />
+
+        <TextView
+            android:id="@+id/about_github"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:autoLink="web"
+            android:text="我的GitHub：https://github.com/huyansheng3"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/about_contact"
+            />
+        <TextView
+            android:id="@+id/about_statement"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="20dp"
+            android:textSize="18sp"
+            android:text="图片均来源于网络，如有侵权，请联系我删除。(●˘◡˘●)"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/about_github"
+            />
+
+
+        </RelativeLayout>
+</LinearLayout>

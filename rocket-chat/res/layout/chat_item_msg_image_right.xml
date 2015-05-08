@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="3dp">
+
+    <include layout="@layout/chat_item_time_layout" />
+
+    <LinearLayout
+        style="@style/chat_item_layout"
+        android:gravity="right">
+
+        <LinearLayout
+            style="@style/chat_item_inner_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <include layout="@layout/chat_item_status_layout" />
+
+            <LinearLayout
+                android:id="@+id/contentLayout"
+                android:layout_width="wrap_content"
+                android:maxWidth="@dimen/chatContentMaxWidth"
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content"
+                android:minWidth="@dimen/chatTextMinWidth"
+                android:gravity="center"
+                android:textColor="#fff"
+                android:orientation="horizontal"
+                android:background="@drawable/chat_right_qp"
+                android:layout_marginRight="5dp"
+                style="@style/chat_content_date_style">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="wrap_content"
+                    android:maxWidth="@dimen/chatImageMaxWidth"
+                    android:maxHeight="@dimen/chatImageMaxWidth"
+                    android:layout_height="wrap_content"
+                    android:src="@null" />
+            </LinearLayout>
+
+
+            <ImageView
+                android:id="@+id/avatar"
+                style="@style/ChatAvatar" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

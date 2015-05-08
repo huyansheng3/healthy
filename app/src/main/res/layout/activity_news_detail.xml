@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    >
+
+    <ScrollView
+        android:fillViewport="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        >
+
+
+    <ImageView
+        android:id="@+id/detail_news_image"
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:scaleType="centerCrop"
+        />
+
+    <TextView
+        android:id="@+id/detail_news_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:minLines="2"
+        android:maxLines="3"
+        android:layout_marginBottom="10dp"
+        />
+
+    <TextView
+        android:id="@+id/detail_news_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="最新评论"
+        android:textSize="16sp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_gravity="center_vertical"
+        />
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="700dp"
+        ></ListView>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/avoscloud_feedback_input_wrap_background"
+        >
+
+    <EditText
+        android:id="@+id/comment_edit"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:minHeight="40dp"
+        android:textColor="@color/avoscloud_feedback_text_gray"
+        android:background="@color/avoscloud_feedback_input_wrap_background"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/create_comment"
+        android:layout_marginTop="5dp"
+        android:focusableInTouchMode="true"
+        />
+
+    <Button
+        android:id="@+id/create_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="5dp"
+        android:background="@color/avoscloud_feedback_input_wrap_background"
+        android:padding="5dp"
+        android:textColor="@color/avoscloud_feedback_text_gray"
+        android:text="发送"
+        />
+
+    </RelativeLayout>
+
+    </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

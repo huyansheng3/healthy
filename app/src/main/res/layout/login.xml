@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ff16d5ff"
+    >
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/point_image"
+        android:src="@drawable/octocat"
+        android:visibility="gone"
+        android:layout_above="@+id/table_layout"
+        android:layout_centerHorizontal="true"
+        />
+<TableLayout
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_centerInParent="true"
+    android:id="@+id/table_layout"
+
+    >
+    <TableRow>
+        <TextView
+            android:text="账号"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_weight="1"
+            />
+        <EditText
+            android:id="@+id/account"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:hint="请输入你的账号"
+            android:layout_weight="8"
+            android:layout_marginRight="20dp"
+            />
+
+    </TableRow>
+
+    <TableRow
+        >
+        <TextView
+            android:text="密码"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_weight="1"
+            />
+        <EditText
+            android:id="@+id/password"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:inputType="textPassword"
+            android:layout_weight="8"
+            android:layout_marginRight="20dp"
+            />
+
+    </TableRow>
+
+
+
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        >
+
+        <Button
+            android:id="@+id/login"
+            android:text="登陆"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp"
+            />
+
+        <Button
+            android:id="@+id/exit"
+            android:text="退出"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="10dp"
+            />
+    </LinearLayout>
+
+</TableLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/register_layout"
+        android:layout_marginBottom="15dp"
+
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            >
+
+        <ImageButton
+            android:id="@+id/weibo_login"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/weibo_icon"
+            android:layout_marginRight="30dp"
+            />
+
+        <ImageButton
+            android:id="@+id/qq_login"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/qq_icon"
+            android:layout_marginLeft="30dp"
+            />
+        </LinearLayout>
+
+        </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/register_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:gravity="center_vertical"
+            android:text="还没有账号？"
+            android:textColor="@color/base_color_text_gray"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/btn_register"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="5dp"
+            android:gravity="center_vertical"
+            android:text="立即注册 >"
+            android:textColor="@color/blue"
+            android:textSize="20sp" />
+    </LinearLayout>
+</RelativeLayout>
