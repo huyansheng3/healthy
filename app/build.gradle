@@ -32,6 +32,7 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:support-v4:22.0.0'
     compile project(':slibingtab')
+	compile project(':leanchatlib')
     compile files('libs/weibo.sdk.android.sso.jar')
     compile files('libs/Java-WebSocket-1.2.0-leancloud.jar')
     compile files('libs/qq.sdk.1.6.1.jar')

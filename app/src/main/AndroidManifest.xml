@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.fengmanlou.logintest" >
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.fengmanlou.logintest">
 
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -55,6 +56,7 @@
         android:allowBackup="true"
         android:icon="@drawable/healthy_logo"
         android:label=""
+        tools:replace="android:label"
         android:theme="@style/AppBaseTheme" >
 
         <meta-data android:name="com.baidu.lbsapi.API_KEY"

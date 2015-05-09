@@ -1,2 +1,2 @@
 include ':app'
-include ':pulltorefresh',':actionbarsherlock',':slibingmenu',':slibingtab'
+include ':pulltorefresh',':actionbarsherlock',':slibingmenu',':slibingtab',':leanchatlib'

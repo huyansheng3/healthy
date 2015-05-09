@@ -111,6 +111,7 @@
     <orderEntry type="module" module-name="slibingtab" exported="" />
     <orderEntry type="module" module-name="slibingmenu" exported="" />
     <orderEntry type="module" module-name="pulltorefresh" exported="" />
+    <orderEntry type="module" module-name="leanchatlib" exported="" />
   </component>
 </module>
 
