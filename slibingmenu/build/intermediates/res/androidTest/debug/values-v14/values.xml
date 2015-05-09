@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/Users/fengmanlou/Desktop/drawable-xxhdpi/LoginTest/library/build/intermediates/exploded-aar/LoginTest/actionbarsherlock/unspecified/res/values-v14/values.xml -->
+    <!-- From: file:/C:/Users/fengmanlou/Desktop/drawable-xxhdpi/LoginTest/slibingmenu/build/intermediates/exploded-aar/LoginTest/actionbarsherlock/unspecified/res/values-v14/values.xml -->
     <eat-comment/>
     <style name="Sherlock.__Theme" parent="android:Theme.Holo">
     </style>

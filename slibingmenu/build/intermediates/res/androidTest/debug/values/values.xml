@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- From: file:/C:/Users/fengmanlou/Desktop/drawable-xxhdpi/LoginTest/library/build/intermediates/exploded-aar/LoginTest/actionbarsherlock/unspecified/res/values/values.xml -->
+    <!-- From: file:/C:/Users/fengmanlou/Desktop/drawable-xxhdpi/LoginTest/slibingmenu/build/intermediates/exploded-aar/LoginTest/actionbarsherlock/unspecified/res/values/values.xml -->
     <eat-comment/>
     <attr format="reference|color" name="background"/>
     <attr format="reference|color" name="backgroundSplit"/>
@@ -51,10 +51,10 @@
     <item name="abs__progress_circular" type="id"/>
     <item name="abs__progress_horizontal" type="id"/>
     <item name="abs__up" type="id"/>
-    <!-- From: file:/C:/Users/fengmanlou/Desktop/drawable-xxhdpi/LoginTest/library/build/intermediates/bundles/debug/res/values/values.xml -->
+    <!-- From: file:/C:/Users/fengmanlou/Desktop/drawable-xxhdpi/LoginTest/slibingmenu/build/intermediates/bundles/debug/res/values/values.xml -->
     <eat-comment/>
     <item name="selected_view" type="id"/>
-    <!-- From: file:/C:/Users/fengmanlou/Desktop/drawable-xxhdpi/LoginTest/library/build/intermediates/exploded-aar/LoginTest/actionbarsherlock/unspecified/res/values/values.xml -->
+    <!-- From: file:/C:/Users/fengmanlou/Desktop/drawable-xxhdpi/LoginTest/slibingmenu/build/intermediates/exploded-aar/LoginTest/actionbarsherlock/unspecified/res/values/values.xml -->
     <eat-comment/>
     <integer name="abs__max_action_buttons">2</integer>
     <string name="abs__action_bar_home_description">Navigate home</string>

@@ -73,21 +73,6 @@
             </intent-filter>
         </receiver>
 
-        <activity
-            android:name="com.avoscloud.chat.contrib.ui.activity.ChatActivity"
-            android:launchMode="singleTask"
-            android:theme="@style/MainTheme" />
-
-        <activity
-            android:name="com.avoscloud.chat.contrib.ui.activity.ImageBrowerActivity"
-            android:theme="@android:style/Theme.Holo.Light.NoActionBar" />
-
-        <receiver android:name="com.avoscloud.chat.contrib.service.receiver.MsgReceiver">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <action android:name="com.avoscloud.session.action" />
-            </intent-filter>
-        </receiver>
 
 
 

@@ -36,7 +36,6 @@ import com.avos.avoscloud.AVFile;
 import com.avos.avoscloud.AVUser;
 import com.avos.avoscloud.AVUtils;
 import com.avos.avoscloud.feedback.FeedbackAgent;
-import com.avoscloud.chat.contrib.service.ChatService;
 import com.example.fengmanlou.logintest.R;
 import com.example.fengmanlou.logintest.service.NewsService;
 import com.example.fengmanlou.logintest.ui.fragment.HealthyFragment;
@@ -87,9 +86,6 @@ public class MainActivity extends FragmentActivity {
             setContentView(R.layout.activity_main);
             setOverflowShowingAlways();
             FeedbackAgent agent = new FeedbackAgent(MainActivity.this);  //在入口Activity注册反馈notification
-
-            ChatService.openSession(selfId);
-
 
             dm = getResources().getDisplayMetrics();
             ViewPager viewPager = (ViewPager) findViewById(R.id.pager);

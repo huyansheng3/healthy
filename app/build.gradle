@@ -54,5 +54,4 @@ dependencies {
     compile files('libs/avoscloud-feedback-v3.1.1.jar')
     compile files('libs/jsoup-1.8.1.jar')
     compile project(':slibingmenu')
-    compile project(':rocket-chat')
 }

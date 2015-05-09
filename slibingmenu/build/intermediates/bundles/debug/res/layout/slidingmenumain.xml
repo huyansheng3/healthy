@@ -2,4 +2,4 @@
 <com.jeremyfeinstein.slidingmenu.lib.SlidingMenu xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/slidingmenumain"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent" /><!-- From: file:/C:/Users/fengmanlou/Desktop/drawable-xxhdpi/LoginTest/library/res/layout/slidingmenumain.xml -->
+    android:layout_height="fill_parent" /><!-- From: file:/C:/Users/fengmanlou/Desktop/drawable-xxhdpi/LoginTest/slibingmenu/res/layout/slidingmenumain.xml -->

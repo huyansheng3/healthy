@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/Users/fengmanlou/Desktop/drawable-xxhdpi/LoginTest/library/build/intermediates/exploded-aar/LoginTest/actionbarsherlock/unspecified/res/values-w480dp-v13/values.xml -->
+    <!-- From: file:/C:/Users/fengmanlou/Desktop/drawable-xxhdpi/LoginTest/slibingmenu/build/intermediates/exploded-aar/LoginTest/actionbarsherlock/unspecified/res/values-w480dp-v13/values.xml -->
     <eat-comment/>
     <bool name="abs__action_bar_embed_tabs">true</bool>
     <bool name="abs__config_allowActionMenuItemTextWithIcon">true</bool>

@@ -1,3 +1,2 @@
-include ':app', ':actionbarsherlock', ':slibingmenu', ':rocket-chat'
-include ':slibingtab'
-include ':pulltorefresh'
+include ':app'
+include ':pulltorefresh',':actionbarsherlock',':slibingmenu',':slibingtab'

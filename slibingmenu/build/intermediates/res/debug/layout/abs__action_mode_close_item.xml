@@ -29,4 +29,4 @@
                android:scaleType="fitCenter"
                android:src="?attr/actionModeCloseDrawable" />
 </com.actionbarsherlock.internal.nineoldandroids.widget.NineLinearLayout>
-<!-- From: file:/C:/Users/fengmanlou/Desktop/drawable-xxhdpi/LoginTest/actionbarsherlock/res/layout/abs__action_mode_close_item.xml --><!-- From: file:/C:/Users/fengmanlou/Desktop/drawable-xxhdpi/LoginTest/library/build/intermediates/exploded-aar/LoginTest/actionbarsherlock/unspecified/res/layout/abs__action_mode_close_item.xml -->
+<!-- From: file:/C:/Users/fengmanlou/Desktop/drawable-xxhdpi/LoginTest/actionbarsherlock/res/layout/abs__action_mode_close_item.xml --><!-- From: file:/C:/Users/fengmanlou/Desktop/drawable-xxhdpi/LoginTest/slibingmenu/build/intermediates/exploded-aar/LoginTest/actionbarsherlock/unspecified/res/layout/abs__action_mode_close_item.xml -->
