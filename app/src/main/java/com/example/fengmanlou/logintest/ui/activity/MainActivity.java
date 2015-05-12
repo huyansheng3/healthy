@@ -16,6 +16,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.TypedValue;
@@ -32,18 +33,24 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.astuetz.PagerSlidingTabStrip;
+import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.AVFile;
 import com.avos.avoscloud.AVUser;
 import com.avos.avoscloud.AVUtils;
 import com.avos.avoscloud.feedback.FeedbackAgent;
+import com.avos.avoscloud.im.v2.AVIMClient;
+import com.avos.avoscloud.im.v2.callback.AVIMClientCallback;
+import com.avoscloud.leanchatlib.controller.ChatManager;
 import com.example.fengmanlou.logintest.R;
 import com.example.fengmanlou.logintest.service.NewsService;
+import com.example.fengmanlou.logintest.service.UserService;
 import com.example.fengmanlou.logintest.ui.fragment.HealthyFragment;
 import com.example.fengmanlou.logintest.ui.fragment.PersonFragment;
 import com.example.fengmanlou.logintest.ui.fragment.SampleListFragment;
 import com.example.fengmanlou.logintest.ui.fragment.SystemFragment;
 import com.example.fengmanlou.logintest.util.Logger;
 import com.example.fengmanlou.logintest.util.PathUtils;
+import com.example.fengmanlou.logintest.util.SimpleNetTask;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
@@ -65,6 +72,7 @@ public class MainActivity extends FragmentActivity {
         private TextView user_nick_name;
         private SearchView searchView;
         private AVUser curUser;
+        private String selfId;
         /**
          * PagerSlidingTabStrip的实例
          */
@@ -118,6 +126,26 @@ public class MainActivity extends FragmentActivity {
             });
 
 
+            ChatManager chatManager = ChatManager.getInstance();
+            String nickname = AVUser.getCurrentUser().getString("nickname");
+            if (!TextUtils.isEmpty(nickname)){
+                selfId = nickname;
+            }
+            if (selfId != null) {
+                chatManager.setupDatabaseWithSelfId(selfId);
+            }
+            Logger.d("selfId : "+selfId);
+            chatManager.openClientWithSelfId(selfId, new AVIMClientCallback() {
+                @Override
+                public void done(AVIMClient avimClient, AVException e) {
+                    if (e != null) {
+                        //如果有error就提示错误
+                        Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                    } else {
+                        //如果没有error的话就啥都不做
+                    }
+                }
+            });
 
         }
 
@@ -127,17 +155,33 @@ public class MainActivity extends FragmentActivity {
         if (resultCode == Activity.RESULT_OK){
             if (requestCode == IMAGE_PICK_REQUEST){
                 Uri uri = intent.getData(); //把图片文件的Uri传过来
-                Uri tempImageUri = startImageCrop(uri, 100, 100, CROP_REQUEST);  //图片截成100*100的头像图片的uri地址
+                final Uri tempImageUri = startImageCrop(uri, 100, 100, CROP_REQUEST);  //图片截成100*100的头像图片的uri地址
                 Logger.d("tempImageUri : "+tempImageUri.toString());
-                imageAvatar.setImageBitmap(BitmapFactory.decodeFile(tempImageUri.toString()));
-
-                curUser = AVUser.getCurrentUser();
+//                new SimpleNetTask(getApplicationContext()) {
+//                    @Override
+//                    protected void doInBack() throws Exception {
+//                        UserService.saveAvatar(tempImageUri.toString());
+//                    }
+//
+//                    @Override
+//                    protected void onSucceed() {
+//                        refresh();
+//                    }
+//                }.execute();
 
 
             }
         }
     }
 
+    private void refresh(){ //刷新头像
+        AVUser curUser = AVUser.getCurrentUser();
+        AVFile avFile = curUser.getAVFile("avatar");
+        if (avFile != null) {
+            String url = avFile.getUrl();
+            ImageLoader.getInstance().displayImage(url, imageAvatar);
+        }
+    }
 
 
 
@@ -286,6 +330,11 @@ public class MainActivity extends FragmentActivity {
                 Toast.makeText(MainActivity.this,"再按一次返回键退出",Toast.LENGTH_SHORT).show();
                 touchTime = currentTime;
             }else {
+                ChatManager.getInstance().closeWithCallback(new AVIMClientCallback() {
+                    @Override
+                    public void done(AVIMClient avimClient, AVException e) {
+                    }
+                });
                 finish();
             }
         }

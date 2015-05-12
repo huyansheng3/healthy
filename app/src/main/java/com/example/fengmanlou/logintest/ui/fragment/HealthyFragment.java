@@ -19,6 +19,7 @@ import com.avos.avoscloud.AnalyticsUtils;
 import com.example.fengmanlou.logintest.R;
 import com.example.fengmanlou.logintest.adapter.HealthyImageAdapter;
 import com.example.fengmanlou.logintest.base.Constants;
+import com.example.fengmanlou.logintest.ui.activity.DocumentActivity;
 import com.example.fengmanlou.logintest.ui.activity.HangActivity;
 import com.example.fengmanlou.logintest.ui.activity.HangListActivity;
 import com.example.fengmanlou.logintest.ui.activity.HealthyActivity;
@@ -103,7 +104,7 @@ public class HealthyFragment extends Fragment {
                         Toast.makeText(getActivity(),"健康社区",Toast.LENGTH_SHORT).show();
                         break;
                     case 6:
-                        Toast.makeText(getActivity(),"自助挂号",Toast.LENGTH_SHORT).show();
+                        goActivity(getActivity(), DocumentActivity.class);
                         break;
                     case 7:
                         goActivity(getActivity(), RemindActivity.class);

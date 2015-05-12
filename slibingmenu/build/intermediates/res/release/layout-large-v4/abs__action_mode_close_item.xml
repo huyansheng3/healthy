@@ -38,4 +38,4 @@
               android:textAllCaps="true"
               android:text="@string/abs__action_mode_done" />
 </com.actionbarsherlock.internal.nineoldandroids.widget.NineLinearLayout>
-<!-- From: file:/C:/Users/fengmanlou/Desktop/drawable-xxhdpi/LoginTest/actionbarsherlock/res/layout-large/abs__action_mode_close_item.xml --><!-- From: file:/C:/Users/fengmanlou/Desktop/drawable-xxhdpi/LoginTest/slibingmenu/build/intermediates/exploded-aar/LoginTest/actionbarsherlock/unspecified/res/layout-large-v4/abs__action_mode_close_item.xml -->
+<!-- From: file:/C:/Users/fengmanlou/Desktop/drawable-xxhdpi/Healthy/actionbarsherlock/res/layout-large/abs__action_mode_close_item.xml --><!-- From: file:/C:/Users/fengmanlou/Desktop/drawable-xxhdpi/Healthy/slibingmenu/build/intermediates/exploded-aar/Healthy/actionbarsherlock/unspecified/res/layout-large-v4/abs__action_mode_close_item.xml -->

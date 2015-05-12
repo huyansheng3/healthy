@@ -66,6 +66,9 @@
             android:enabled="true"
             android:process=":remote"/>
 
+
+        <!--用于leancloud 推送信息和即时聊天的一些服务-->
+
         <service android:name="com.avos.avoscloud.PushService" />
 
         <receiver android:name="com.avos.avoscloud.AVBroadcastReceiver">
@@ -75,8 +78,13 @@
             </intent-filter>
         </receiver>
 
+        <activity android:name="com.avoscloud.leanchatlib.activity.ImageBrowserActivity" />
 
+        <activity android:name=".ui.activity.TestActivity"></activity>
 
+        <activity android:name=".ui.activity.DocumentActivity"
+            android:parentActivityName=".ui.activity.MainActivity"
+            ></activity>
 
         <activity android:name="com.avos.avoscloud.feedback.ThreadActivity"></activity>
 
@@ -85,7 +93,7 @@
             >
         </activity>
 
-        <activity android:name=".ui.activity.ChatActivity"></activity>
+        <activity android:name=".ui.activity.ChatRoomActivity"></activity>
 
 
         <receiver android:name=".service.BootReceiver">

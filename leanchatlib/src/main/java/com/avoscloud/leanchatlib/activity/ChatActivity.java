@@ -196,7 +196,7 @@ public class ChatActivity extends BaseActivity implements OnClickListener,
   }
 
   public void initRecordBtn() {
-    recordBtn.setSavePath(com.avoscloud.leanchatlib.utils.PathUtils.getRecordTmpPath());
+    recordBtn.setSavePath(PathUtils.getRecordTmpPath());
     recordBtn.setRecordEventListener(new RecordButton.RecordEventListener() {
       @Override
       public void onFinishedRecord(final String audioPath, int secs) {

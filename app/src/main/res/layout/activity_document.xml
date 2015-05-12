@@ -3,4 +3,217 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        >
+
+
+    <LinearLayout style="@style/Register_Input">
+
+        <TextView
+            style="@style/My.TextView._Black"
+            android:layout_width="@dimen/registerLeftWidth"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="姓名" />
+
+        <EditText
+            android:id="@+id/document_name"
+            style="@style/Register_Edit"
+            android:hint="请在此输入姓名"
+            android:inputType="textAutoComplete" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/Register_Input">
+
+        <TextView
+            style="@style/My.TextView._Black"
+            android:layout_width="@dimen/registerLeftWidth"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="年龄" />
+
+        <EditText
+            android:id="@+id/document_age"
+            style="@style/Register_Edit"
+            android:hint="请在此输入年龄"
+            android:inputType="number" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/Register_Input">
+
+        <TextView
+            style="@style/My.TextView._Black"
+            android:layout_width="@dimen/registerLeftWidth"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="性别" />
+
+        <RadioGroup
+            android:id="@+id/document_sex"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/male"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="男" />
+
+            <RadioButton
+                android:id="@+id/female"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="女" />
+        </RadioGroup>
+    </LinearLayout>
+
+        <LinearLayout style="@style/Register_Input">
+
+            <TextView
+                style="@style/My.TextView._Black"
+                android:layout_width="@dimen/registerLeftWidth"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="血型" />
+
+            <RadioGroup
+                android:id="@+id/document_blood"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/blood_a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="A型" />
+
+                <RadioButton
+                    android:id="@+id/blood_b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="B型" />
+
+                <RadioButton
+                    android:id="@+id/blood_ab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="AB型" />
+
+                <RadioButton
+                    android:id="@+id/blood_o"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="O型" />
+            </RadioGroup>
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/Register_Input">
+
+        <TextView
+            style="@style/My.TextView._Black"
+            android:layout_width="@dimen/registerLeftWidth"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="病史" />
+
+        <EditText
+            android:id="@+id/document_experience"
+            style="@style/Register_Edit"
+            android:hint="请输入病史"
+            android:inputType="text" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/Register_Input">
+
+        <TextView
+            style="@style/My.TextView._Black"
+            android:layout_width="@dimen/registerLeftWidth"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="心理状态" />
+
+        <EditText
+            android:id="@+id/document_metal"
+            style="@style/Register_Edit"
+            android:hint="请在此输入心理状态"
+            android:inputType="text" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/Register_Input">
+
+        <TextView
+            style="@style/My.TextView._Black"
+            android:layout_width="@dimen/registerLeftWidth"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="过敏" />
+
+        <EditText
+            android:id="@+id/document_allergy"
+            style="@style/Register_Edit"
+            android:hint="请在此输入过敏情况"
+            android:inputType="text" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/Register_Input">
+
+        <TextView
+            style="@style/My.TextView._Black"
+            android:layout_width="@dimen/registerLeftWidth"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="备注" />
+
+        <EditText
+            android:id="@+id/document_remark"
+            style="@style/Register_Edit"
+            android:hint="请在此输入备注"
+            android:inputType="text" />
+    </LinearLayout>
+
+
+
+
+    <Button
+        android:id="@+id/document_save_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="保存档案"
+        android:textSize="18sp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="#ff71ffe5"
+        android:layout_marginBottom="15dp"
+        />
+
+    </LinearLayout>
+    </ScrollView>
 </LinearLayout>
+

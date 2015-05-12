@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/Users/fengmanlou/Desktop/drawable-xxhdpi/LoginTest/actionbarsherlock/res/values-v14/abs__themes.xml -->
+    <!-- From: file:/C:/Users/fengmanlou/Desktop/drawable-xxhdpi/Healthy/actionbarsherlock/res/values-v14/abs__themes.xml -->
     <eat-comment/>
     <style name="Sherlock.__Theme" parent="android:Theme.Holo">
     </style>
@@ -18,7 +18,7 @@
     </style>
     <style name="Sherlock.__Theme.Light" parent="android:Theme.Holo.Light">
     </style>
-    <!-- From: file:/C:/Users/fengmanlou/Desktop/drawable-xxhdpi/LoginTest/actionbarsherlock/res/values-v14/abs__styles.xml -->
+    <!-- From: file:/C:/Users/fengmanlou/Desktop/drawable-xxhdpi/Healthy/actionbarsherlock/res/values-v14/abs__styles.xml -->
     <eat-comment/>
     <style name="TextAppearance.Sherlock.Light.Widget.PopupMenu.Large" parent="android:TextAppearance.Holo.Widget.PopupMenu.Large">
     </style>
@@ -48,7 +48,7 @@
     </style>
     <style name="TextAppearance.Sherlock.Widget.PopupMenu.Small" parent="android:TextAppearance.Holo.Widget.PopupMenu.Small">
     </style>
-    <!-- From: file:/C:/Users/fengmanlou/Desktop/drawable-xxhdpi/LoginTest/actionbarsherlock/res/values-v14/abs__themes.xml -->
+    <!-- From: file:/C:/Users/fengmanlou/Desktop/drawable-xxhdpi/Healthy/actionbarsherlock/res/values-v14/abs__themes.xml -->
     <eat-comment/>
     <style name="Theme.Sherlock.Light.NoActionBar">
       <item name="android:windowActionBar">false</item>
@@ -58,7 +58,7 @@
       <item name="android:windowActionBar">false</item>
       <item name="android:windowNoTitle">true</item>
     </style>
-    <!-- From: file:/C:/Users/fengmanlou/Desktop/drawable-xxhdpi/LoginTest/actionbarsherlock/res/values-v14/abs__styles.xml -->
+    <!-- From: file:/C:/Users/fengmanlou/Desktop/drawable-xxhdpi/Healthy/actionbarsherlock/res/values-v14/abs__styles.xml -->
     <eat-comment/>
     <style name="Widget.Sherlock.ActionBar" parent="android:Widget.Holo.ActionBar">
     </style>

@@ -22,4 +22,4 @@
     <item android:state_activated="true" android:color="@color/abs__bright_foreground_holo_dark"/>
     <item android:color="@color/abs__bright_foreground_holo_dark"/> <!-- not selected -->
 </selector>
-<!-- From: file:/C:/Users/fengmanlou/Desktop/drawable-xxhdpi/LoginTest/actionbarsherlock/res/color/abs__primary_text_holo_dark.xml -->
+<!-- From: file:/C:/Users/fengmanlou/Desktop/drawable-xxhdpi/Healthy/actionbarsherlock/res/color/abs__primary_text_holo_dark.xml -->

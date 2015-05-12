@@ -24,4 +24,4 @@
     <item android:state_focused="true"                                                             android:drawable="@drawable/abs__list_focused_holo" />
     <item                                                                                          android:drawable="@android:color/transparent" />
 </selector>
-<!-- From: file:/C:/Users/fengmanlou/Desktop/drawable-xxhdpi/LoginTest/actionbarsherlock/res/drawable/abs__item_background_holo_dark.xml -->
+<!-- From: file:/C:/Users/fengmanlou/Desktop/drawable-xxhdpi/Healthy/actionbarsherlock/res/drawable/abs__item_background_holo_dark.xml -->

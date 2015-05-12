@@ -5,4 +5,4 @@
     <item android:state_focused="true" android:drawable="@color/background_tab_pressed"/>
     <item android:drawable="@android:color/transparent"/>
 
-</selector><!-- From: file:/C:/Users/fengmanlou/Desktop/drawable-xxhdpi/LoginTest/slibingtab/res/drawable/background_tab.xml -->
+</selector><!-- From: file:/C:/Users/fengmanlou/Desktop/drawable-xxhdpi/Healthy/slibingtab/res/drawable/background_tab.xml -->

@@ -91,8 +91,6 @@ public class SystemImageAdapter extends BaseAdapter {
             }
             if (avUserList.get(position).getString("nickname") != null) {
                 wrapper.user_items_nickname.setText(avUserList.get(position).getString("nickname"));
-            }else {
-                wrapper.user_items_nickname.setText(avUserList.get(position).getString("username"));
             }
         }
 

@@ -71,6 +71,7 @@ public class ChatManager extends AVIMClientEventHandler {
     members.add(userId);
     members.add(selfId);
     AVIMConversationQuery query = imClient.getQuery();
+    Logger.d("query : "+query);
     query.withMembers(members);
     query.whereEqualTo(ConversationType.ATTR_TYPE_KEY, ConversationType.Single.getValue());
     query.orderByDescending(KEY_UPDATED_AT);
