@@ -80,8 +80,6 @@
 
         <activity android:name="com.avoscloud.leanchatlib.activity.ImageBrowserActivity" />
 
-        <activity android:name=".ui.activity.TestActivity"></activity>
-
         <activity android:name=".ui.activity.DocumentActivity"
             android:parentActivityName=".ui.activity.MainActivity"
             ></activity>
@@ -93,8 +91,24 @@
             >
         </activity>
 
+        <activity android:name=".ui.activity.DeviceActivity"
+            android:parentActivityName=".ui.activity.MainActivity"
+            ></activity>
+
+
+        <activity android:name=".ui.activity.DeviceDetailActivity"></activity>
+
+        <activity android:name=".ui.activity.CaseActivity"
+            android:parentActivityName=".ui.activity.MainActivity"
+            ></activity>
+
+        <activity android:name=".ui.activity.CaseDetailActivity"></activity>
+
         <activity android:name=".ui.activity.ChatRoomActivity"></activity>
 
+        <activity android:name=".ui.activity.FamilyActivity"
+            android:parentActivityName=".ui.activity.MainActivity"
+            ></activity>
 
         <receiver android:name=".service.BootReceiver">
             <intent-filter>

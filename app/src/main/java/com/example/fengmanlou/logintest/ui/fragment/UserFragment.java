@@ -1,38 +1,36 @@
 package com.example.fengmanlou.logintest.ui.fragment;
 
 import android.app.Dialog;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.avos.avoscloud.AVAnalytics;
 import com.avos.avoscloud.AVException;
+import com.avos.avoscloud.AVObject;
 import com.avos.avoscloud.AVQuery;
 import com.avos.avoscloud.AVUser;
 import com.avos.avoscloud.FindCallback;
-import com.avos.avoscloud.im.v2.AVIMClient;
+import com.avos.avoscloud.FollowCallback;
+import com.avos.avoscloud.SaveCallback;
 import com.avos.avoscloud.im.v2.AVIMConversation;
-import com.avos.avoscloud.im.v2.callback.AVIMClientCallback;
 import com.avos.avoscloud.im.v2.callback.AVIMConversationCreatedCallback;
 import com.avoscloud.leanchatlib.activity.ChatActivity;
 import com.avoscloud.leanchatlib.controller.ChatManager;
 import com.example.fengmanlou.logintest.R;
-import com.example.fengmanlou.logintest.adapter.NewsAdapter;
-import com.example.fengmanlou.logintest.adapter.SystemImageAdapter;
-import com.example.fengmanlou.logintest.service.NewsService;
+import com.example.fengmanlou.logintest.adapter.UserImageAdapter;
+import com.example.fengmanlou.logintest.avobject.Hang;
 import com.example.fengmanlou.logintest.ui.activity.ChatRoomActivity;
-import com.example.fengmanlou.logintest.ui.activity.TestActivity;
 import com.example.fengmanlou.logintest.util.Logger;
 
 import java.util.List;
@@ -40,14 +38,15 @@ import java.util.List;
 /**
  * Created by fengmanlou on 2015/4/4.
  */
-public class SystemFragment extends Fragment {
+public class UserFragment extends Fragment {
 
     private ListView listView;
-    private SystemImageAdapter adapter;
+    private UserImageAdapter adapter;
     private List<AVUser> avUserList;
     private String otherId;
     private String selfId;
     private Dialog progressDialog;
+    private static final int ADD_HOME =2;
 
     @Override
     public void onPause() {
@@ -69,12 +68,48 @@ public class SystemFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.system_fragment, container, false);
+        View view = inflater.inflate(R.layout.user_fragment, container, false);
         listView = (ListView) view.findViewById(android.R.id.list);
         new RemoteDataTask().execute();
+        registerForContextMenu(listView);
         InitListener();
         return view;
     }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        menu.add(0, ADD_HOME, 0, "添加群组");
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case ADD_HOME:
+                AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+
+                // 把这个用户添加到家庭群组中
+                final AVUser user = avUserList.get(info.position); //获得被操作的User
+                AVUser curUser = AVUser.getCurrentUser();
+
+                curUser.followInBackground(user.getObjectId(),new FollowCallback() {
+                    @Override
+                    public void done(AVObject avObject, AVException e) {
+                        if (e == null){
+                            Toast.makeText(getActivity(),"添加成功",Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    protected void internalDone0(Object o, AVException e) {
+                        Toast.makeText(getActivity(),"添加成功",Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+        }
+        return super.onContextItemSelected(item);
+    }
+
 
 
     private class RemoteDataTask extends AsyncTask<Void, Void, Void> {
@@ -82,6 +117,7 @@ public class SystemFragment extends Fragment {
         @Override
         protected Void doInBackground(Void... params) {
             AVQuery<AVUser> query = AVQuery.getQuery(AVUser.class);
+            query.setCachePolicy(AVQuery.CachePolicy.CACHE_ELSE_NETWORK);
             query.whereNotEqualTo("objectId",AVUser.getCurrentUser().getObjectId());
             query.findInBackground(new FindCallback<AVUser>() {
                 @Override
@@ -110,7 +146,7 @@ public class SystemFragment extends Fragment {
         @Override
         protected void onPostExecute(Void result) {
             // 展现ListView
-            adapter = new SystemImageAdapter(getActivity(),avUserList);
+            adapter = new UserImageAdapter(getActivity(),avUserList);
             listView.setAdapter(adapter);
         }
     }

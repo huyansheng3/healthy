@@ -23,28 +23,22 @@ public class PersonImageAdapter extends BaseAdapter {
     private Integer[] images = {
             //九宫格图片的设置
             R.drawable.person_icon01,
-            R.drawable.person_icon02,
             R.drawable.person_icon03,
             R.drawable.person_icon04,
             R.drawable.person_icon05,
-            R.drawable.person_icon06,
             R.drawable.person_icon07,
             R.drawable.person_icon08,
-            R.drawable.person_icon09,
 
     };
 
     private String[] texts = {
             //九宫格图片下方文字的设置
-            "体检报告",
-            "医疗记录",
-            "预约体检",
+            "提醒就医",
+            "自助挂号",
             "病历夹",
             "设备租赁",
-            "评价回答",
             "家庭群组",
             "私人医生",
-            "咨询问题",
     };
 
     //get the number
@@ -73,7 +67,7 @@ public class PersonImageAdapter extends BaseAdapter {
             LayoutInflater inflater = LayoutInflater.from(context);
             view = inflater.inflate(R.layout.grid_items, null);
             view.setTag(wrapper);
-            view.setPadding(15, 55, 15, 55);  //每格的间距
+            view.setPadding(0, 40, 0, 40);  //每格的间距
         } else {
             wrapper = (ImgTextWrapper) view.getTag();
         }

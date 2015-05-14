@@ -41,7 +41,6 @@ public class SampleListFragment extends ListFragment {
             SampleAdapter adapter = new SampleAdapter(getActivity());
 
             adapter.add(new SampleItem("个人中心", R.drawable.ofm_person));
-            adapter.add(new SampleItem("病历夹", R.drawable.ofm_case));
             adapter.add(new SampleItem("分享", R.drawable.action_share_icon_gray));
             adapter.add(new SampleItem("设置", R.drawable.ofm_setting));
             adapter.add(new SampleItem("关于", R.drawable.ofm_idea));
@@ -59,11 +58,6 @@ public class SampleListFragment extends ListFragment {
                 goActivity(getActivity(), UserInforActivity.class);
                 break;
             case 1:
-                ToastUtils.makeText(getActivity(),"病历夹",Toast.LENGTH_SHORT).show();
-                FeedbackAgent agent = new FeedbackAgent(getActivity());
-                agent.startDefaultThreadActivity();
-                break;
-            case 2:
                 Intent intent = new Intent(Intent.ACTION_SEND);
                 intent.setType("text/plain");
                 intent.putExtra(Intent.EXTRA_SUBJECT,"分享");
@@ -71,13 +65,13 @@ public class SampleListFragment extends ListFragment {
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(Intent.createChooser(intent,getActivity().getTitle()));
                 break;
-            case 3:
+            case 2:
                 goActivity(getActivity(), SettingActivity.class);
                 break;
-            case 4:
+            case 3:
                 goActivity(getActivity(), AboutActivity.class);
                 break;
-            case 5:
+            case 4:
                 AVUser.logOut();             //清除缓存用户对象
                 AVUser currentUser = AVUser.getCurrentUser(); // 现在的currentUser是null了
                 System.exit(0);

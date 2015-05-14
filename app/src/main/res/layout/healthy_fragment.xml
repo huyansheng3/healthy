@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginBottom="15dp"
+    android:layout_marginBottom="20dp"
     >
 
     <GridView
@@ -10,9 +10,9 @@
         android:id="@+id/grid_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:numColumns="3"
-        android:columnWidth="50dp"
-        android:layout_marginTop="5dp"
+        android:numColumns="2"
+        android:columnWidth="65dp"
+        android:layout_marginTop="20dp"
         />
 
 </LinearLayout>

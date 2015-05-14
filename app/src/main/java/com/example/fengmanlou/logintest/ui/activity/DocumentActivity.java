@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -30,12 +31,15 @@ import java.util.List;
  */
 public class DocumentActivity extends Activity{
     private RadioGroup document_sex,document_blood;
+    private RadioButton femaleButton,maleButton,aButton,bButton,oButton,abButton;
     private EditText document_name,document_age,document_experience,document_metal,document_allergy,document_remark;
     private Button document_save_btn;
     private boolean isEdit; //是否可以编辑，第一次是可以编辑的
     private Document document;
     private SharedPreferences pref;
     private SharedPreferences.Editor editor;
+    private String blood;
+    private String sex;
     private String objectId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,11 +93,43 @@ public class DocumentActivity extends Activity{
                 } else if (TextUtils.isEmpty(document_remark.toString())) {
                     Toast.makeText(DocumentActivity.this, "备注不能为空", Toast.LENGTH_SHORT).show();
                 } else {
-                    Logger.d("name : " + document_name.getText().toString());
-                    Logger.d("sex : " + document_age.getText().toString());
-                    Logger.d("experience : " + document_experience.getText().toString());
-                    Logger.d("allergy : " + document_allergy.getText().toString());
-                    Logger.d("metal : " + document_metal.getText().toString());
+                    document_sex.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                        @Override
+                        public void onCheckedChanged(RadioGroup group, int checkedId) {
+                            if (checkedId == femaleButton.getId()){
+                                sex = "女";
+                            }else {
+                                sex = "男";
+                            }
+                        }
+                    });
+
+                    document_blood.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                        @Override
+                        public void onCheckedChanged(RadioGroup group, int checkedId) {
+                            switch (checkedId){
+                                case R.id.blood_a :
+                                    blood = "A型";
+                                    break;
+                                case R.id.blood_b :
+                                    blood = "B型";
+                                    break;
+                                case R.id.blood_o :
+                                    blood = "O型";
+                                    break;
+                                case R.id.blood_ab :
+                                    blood = "AB型";
+                                    break;
+                            }
+
+                        }
+                    });
+
+                    Logger.d("sex :"+sex);
+                    Logger.d("blood : "+blood);
+
+                    document.setBlood(blood);
+                    document.setSex(sex);
 
                     document.setName(document_name.getText().toString().trim());
                     document.setAge(document_age.getText().toString().trim());
@@ -102,8 +138,6 @@ public class DocumentActivity extends Activity{
                     document.setRemark(document_remark.getText().toString().trim());
                     document.setMetal(document_metal.getText().toString().trim());
                     document.setCreator(AVUser.getCurrentUser());
-                    document.setSex("男");
-                    document.setBlood("A型");
                     document.saveInBackground(new SaveCallback() {
                         @Override
                         public void done(AVException e) {
@@ -133,6 +167,13 @@ public class DocumentActivity extends Activity{
         document_sex = (RadioGroup) findViewById(R.id.document_sex);
         document_blood = (RadioGroup) findViewById(R.id.document_blood);
         document_save_btn = (Button) findViewById(R.id.document_save_btn);
+        femaleButton = (RadioButton) findViewById(R.id.female);
+        maleButton = (RadioButton) findViewById(R.id.male);
+        aButton = (RadioButton) findViewById(R.id.blood_a);
+        bButton = (RadioButton) findViewById(R.id.blood_b);
+        oButton = (RadioButton) findViewById(R.id.blood_o);
+        abButton = (RadioButton) findViewById(R.id.blood_ab);
+
     }
 
     @Override
@@ -145,7 +186,7 @@ public class DocumentActivity extends Activity{
     public boolean onMenuItemSelected(int featureId, MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.edit_docu){
-            Toast.makeText(this,"请修改内容吧！",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"请修改内容吧！e",Toast.LENGTH_SHORT).show();
             AVQuery<Document> query = AVQuery.getQuery(Document.class);
             query.whereEqualTo("creator",AVUser.getCurrentUser());
             query.findInBackground(new FindCallback<Document>() {
@@ -166,6 +207,10 @@ public class DocumentActivity extends Activity{
                     }
                 }
             });
+        }
+        if (id == R.id.delete_docu){
+            editor = pref.edit();
+            editor.clear();
         }
 
         return super.onMenuItemSelected(featureId, item);

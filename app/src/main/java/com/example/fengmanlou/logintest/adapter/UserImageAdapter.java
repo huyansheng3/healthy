@@ -22,11 +22,11 @@ import java.util.List;
 /**
  * Created by fengmanlou on 2015/4/9.
  */
-public class SystemImageAdapter extends BaseAdapter {
+public class UserImageAdapter extends BaseAdapter {
     private Context context;
     private List<AVUser> avUserList;
 
-    public SystemImageAdapter(Context context, List<AVUser> avUserList) {
+    public UserImageAdapter(Context context, List<AVUser> avUserList) {
         this.context = context;
         this.avUserList = avUserList;
     }

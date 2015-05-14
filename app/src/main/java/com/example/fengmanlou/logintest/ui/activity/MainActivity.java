@@ -1,11 +1,8 @@
 package com.example.fengmanlou.logintest.ui.activity;
 
 import android.app.Activity;
-import android.app.Notification;
-import android.app.PendingIntent;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.net.Uri;
@@ -18,7 +15,6 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -28,7 +24,6 @@ import android.view.Window;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.SearchView;
-import android.widget.ShareActionProvider;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -43,19 +38,16 @@ import com.avos.avoscloud.im.v2.callback.AVIMClientCallback;
 import com.avoscloud.leanchatlib.controller.ChatManager;
 import com.example.fengmanlou.logintest.R;
 import com.example.fengmanlou.logintest.service.NewsService;
-import com.example.fengmanlou.logintest.service.UserService;
 import com.example.fengmanlou.logintest.ui.fragment.HealthyFragment;
 import com.example.fengmanlou.logintest.ui.fragment.PersonFragment;
 import com.example.fengmanlou.logintest.ui.fragment.SampleListFragment;
-import com.example.fengmanlou.logintest.ui.fragment.SystemFragment;
+import com.example.fengmanlou.logintest.ui.fragment.UserFragment;
 import com.example.fengmanlou.logintest.util.Logger;
 import com.example.fengmanlou.logintest.util.PathUtils;
-import com.example.fengmanlou.logintest.util.SimpleNetTask;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.io.File;
-import java.io.IOException;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
@@ -66,9 +58,9 @@ public class MainActivity extends FragmentActivity {
         private static final int CROP_REQUEST = 2;
         private static final int IMAGE_PICK_REQUEST = 1;
         public static ImageLoader imageLoader = ImageLoader.getInstance();
-        private HealthyFragment chatFragment;
-        private PersonFragment foundFragment;
-        private SystemFragment contactsFragment;
+        private HealthyFragment healthyFragment; //健康社区
+        private PersonFragment personFragment; //个人应用
+        private UserFragment userFragment;     //所有用户
         private TextView user_nick_name;
         private SearchView searchView;
         private AVUser curUser;
@@ -257,20 +249,20 @@ public class MainActivity extends FragmentActivity {
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                    if (chatFragment == null) {
-                        chatFragment = new HealthyFragment();
+                    if (healthyFragment == null) {
+                        healthyFragment = new HealthyFragment();
                     }
-                    return chatFragment;
+                    return healthyFragment;
                 case 1:
-                    if (foundFragment == null) {
-                        foundFragment = new PersonFragment();
+                    if (personFragment == null) {
+                        personFragment = new PersonFragment();
                     }
-                    return foundFragment;
+                    return personFragment;
                 case 2:
-                    if (contactsFragment == null) {
-                        contactsFragment = new SystemFragment();
+                    if (userFragment == null) {
+                        userFragment = new UserFragment();
                     }
-                    return contactsFragment;
+                    return userFragment;
                 default:
                     return null;
             }

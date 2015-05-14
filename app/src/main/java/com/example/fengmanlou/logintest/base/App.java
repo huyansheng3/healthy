@@ -12,7 +12,9 @@ import com.avos.avoscloud.feedback.FeedbackAgent;
 import com.avoscloud.leanchatlib.controller.ChatManager;
 import com.avoscloud.leanchatlib.controller.UserInfoFactory;
 import com.avoscloud.leanchatlib.model.UserInfo;
+import com.example.fengmanlou.logintest.avobject.Case;
 import com.example.fengmanlou.logintest.avobject.Comment;
+import com.example.fengmanlou.logintest.avobject.Device;
 import com.example.fengmanlou.logintest.avobject.Document;
 import com.example.fengmanlou.logintest.avobject.Hang;
 import com.example.fengmanlou.logintest.avobject.News;
@@ -34,6 +36,8 @@ public class App extends LitePalApplication{
     public void onCreate() {
         super.onCreate();
 
+        AVObject.registerSubclass(Case.class);
+        AVObject.registerSubclass(Device.class);
         AVObject.registerSubclass(Hang.class);
         AVObject.registerSubclass(News.class);
         AVObject.registerSubclass(Comment.class);

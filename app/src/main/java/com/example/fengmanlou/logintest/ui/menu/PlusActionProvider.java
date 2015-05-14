@@ -28,7 +28,7 @@ public class PlusActionProvider extends ActionProvider {
     @Override
     public void onPrepareSubMenu(SubMenu subMenu) {
         subMenu.clear();
-        subMenu.add("添加好友")
+        subMenu.add("添加群组")
                 .setIcon(R.drawable.actionbar_add_icon)
                 .setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
                     @Override

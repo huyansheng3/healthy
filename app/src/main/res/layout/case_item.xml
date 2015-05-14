@@ -9,15 +9,14 @@
         android:layout_height="match_parent"
         android:orientation="horizontal"
         >
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/icon1"
+        />
 
-
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/icon2"
-            />
     <TextView
-        android:id="@+id/healthy_title"
+        android:id="@+id/case_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20sp"

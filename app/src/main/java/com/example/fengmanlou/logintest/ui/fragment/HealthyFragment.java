@@ -101,16 +101,7 @@ public class HealthyFragment extends Fragment {
                         startActivity(intent2);
                         break;
                     case 5:
-                        Toast.makeText(getActivity(),"健康社区",Toast.LENGTH_SHORT).show();
-                        break;
-                    case 6:
                         goActivity(getActivity(), DocumentActivity.class);
-                        break;
-                    case 7:
-                        goActivity(getActivity(), RemindActivity.class);
-                        break;
-                    case 8:
-                        goActivity(getActivity(), HangListActivity.class);
                         break;
                 }
            }

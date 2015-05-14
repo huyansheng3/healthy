@@ -15,7 +15,9 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.fengmanlou.logintest.R;
+import com.example.fengmanlou.logintest.adapter.CookAdapter;
 import com.example.fengmanlou.logintest.adapter.HealthyAdapter;
+import com.example.fengmanlou.logintest.adapter.YangShengAdapter;
 import com.example.fengmanlou.logintest.avobject.Healthy;
 import com.example.fengmanlou.logintest.base.Constants;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
@@ -72,7 +74,7 @@ public class HealthyActivity extends Activity{
                         String title = link.text();
                         String url = link.attr("href");
                         healthy = new Healthy();
-                        healthy.setTitle(title);
+                        healthy.setTitle(" · "+title);
                         healthy.setUrl(url);
                         healthyList.add(healthy);
                     }
@@ -81,9 +83,19 @@ public class HealthyActivity extends Activity{
                 } catch (IOException e) {
                     Log.d("file read exception : ", e.getMessage());
                 }
-
-                HealthyAdapter healthyAdapter = new HealthyAdapter(HealthyActivity.this, healthyList);
-                pullToRefreshListView.setAdapter(healthyAdapter);
+                if (news_title.equals("北方网健康")) {
+                    HealthyAdapter healthyAdapter = new HealthyAdapter(HealthyActivity.this, healthyList);
+                    pullToRefreshListView.setAdapter(healthyAdapter);
+                }
+                if (news_title.equals("中医养生")){
+                    YangShengAdapter yangShengAdapter = new YangShengAdapter(HealthyActivity.this,healthyList);
+                    pullToRefreshListView.setAdapter(yangShengAdapter);
+                }
+                if (news_title.equals("推荐食谱")) {
+                  //  HealthyAdapter healthyAdapter = new HealthyAdapter(HealthyActivity.this, healthyList);
+                    CookAdapter cookAdapter = new CookAdapter(HealthyActivity.this,healthyList);
+                    pullToRefreshListView.setAdapter(cookAdapter);
+                }
                 pullToRefreshListView.setMode(PullToRefreshBase.Mode.BOTH);
 
             }
@@ -144,7 +156,7 @@ public class HealthyActivity extends Activity{
                             String title = link.text();
                             String url = link.attr("href");
                             healthy = new Healthy();
-                            healthy.setTitle(title);
+                            healthy.setTitle(" · "+title);
                             healthy.setUrl(url);
                             healthyList.add(healthy);
                         }

@@ -27,11 +27,7 @@ public class HealthyImageAdapter extends BaseAdapter {
             R.drawable.healthy_icon03,
             R.drawable.healthy_icon04,
             R.drawable.healthy_icon05,
-            R.drawable.healthy_icon06,
             R.drawable.healthy_icon07,
-            R.drawable.healthy_icon08,
-            R.drawable.healthy_icon09,
-
     };
 
     private String[] texts = {
@@ -41,10 +37,7 @@ public class HealthyImageAdapter extends BaseAdapter {
             "就医地图",
             "推荐食谱",
             "中医养生",
-            "健康社区",
             "健康档案",
-            "提醒就医",
-            "自助挂号",
     };
 
     //get the number
@@ -73,7 +66,7 @@ public class HealthyImageAdapter extends BaseAdapter {
             LayoutInflater inflater = LayoutInflater.from(context);
             view = inflater.inflate(R.layout.grid_items, null);
             view.setTag(wrapper);
-            view.setPadding(15, 55, 15, 55);  //每格的间距
+            view.setPadding(0,40, 0, 40);  //每格的间距
         } else {
             wrapper = (ImgTextWrapper) view.getTag();
         }

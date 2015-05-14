@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    >
+
+
+    <ScrollView
+        android:fillViewport="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            >
+
+
+            <ImageView
+                android:id="@+id/detail_device_image"
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+                android:scaleType="centerCrop"
+                />
+
+            <TextView
+                android:id="@+id/detail_device_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:minLines="2"
+                android:maxLines="3"
+                android:layout_marginBottom="10dp"
+                />
+
+            <TextView
+                android:id="@+id/detail_device_describe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                />
+
+
+            <Button
+                android:id="@+id/device_rent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ff16d5ff"
+                android:text="租赁"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                />
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

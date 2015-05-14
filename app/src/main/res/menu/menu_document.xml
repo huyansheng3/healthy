@@ -5,4 +5,10 @@
         android:title="编辑"
         android:showAsAction="always"
         ></item>
+
+    <item android:id="@+id/delete_docu"
+        android:icon="@drawable/ic_action_action_delete"
+        android:title="删除"
+        android:showAsAction="always"
+        ></item>
 </menu>
