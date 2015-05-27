@@ -83,6 +83,8 @@ public class DeviceDetailActivity extends Activity{
                                 device = DeviceService.findByObjectId(objectId);
                                 if (device != null) {
 //                                    if (device.getCount().intValue() > 0) {
+                                        Logger.d("数量 ："+device.get("count"));
+                                        // Logger.d("数量 ： "+device.getCount().intValue());
                                         device.increment("count", -1);
                                         device.saveInBackground();
 /*                                    } else {

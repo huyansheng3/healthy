@@ -14,7 +14,7 @@
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/yangsheng"
+            android:src="@drawable/healthy_icon05"
             />
     <TextView
         android:id="@+id/healthy_title"

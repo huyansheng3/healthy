@@ -12,7 +12,7 @@
     <ImageView
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:src="@drawable/icon1"
+        android:src="@drawable/person_icon04"
         />
 
     <TextView

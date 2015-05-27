@@ -17,6 +17,7 @@ import com.example.fengmanlou.logintest.adapter.PersonImageAdapter;
 import com.example.fengmanlou.logintest.base.Constants;
 import com.example.fengmanlou.logintest.ui.activity.CaseActivity;
 import com.example.fengmanlou.logintest.ui.activity.DeviceActivity;
+import com.example.fengmanlou.logintest.ui.activity.DoctorActivity;
 import com.example.fengmanlou.logintest.ui.activity.DocumentActivity;
 import com.example.fengmanlou.logintest.ui.activity.FamilyActivity;
 import com.example.fengmanlou.logintest.ui.activity.HangActivity;
@@ -80,6 +81,7 @@ public class PersonFragment extends Fragment {
                         goActivity(getActivity(), FamilyActivity.class);
                         break;
                     case 5:
+                        goActivity(getActivity(), DoctorActivity.class);
                         break;
                 }
             }

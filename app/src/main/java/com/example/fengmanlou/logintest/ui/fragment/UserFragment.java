@@ -117,7 +117,7 @@ public class UserFragment extends Fragment {
         @Override
         protected Void doInBackground(Void... params) {
             AVQuery<AVUser> query = AVQuery.getQuery(AVUser.class);
-            query.setCachePolicy(AVQuery.CachePolicy.CACHE_ELSE_NETWORK);
+            query.setCachePolicy(AVQuery.CachePolicy.NETWORK_ELSE_CACHE);
             query.whereNotEqualTo("objectId",AVUser.getCurrentUser().getObjectId());
             query.findInBackground(new FindCallback<AVUser>() {
                 @Override

@@ -27,7 +27,7 @@ public class SplashActivity extends Activity{
         setContentView(R.layout.activity_splash);
         background = (ImageView) findViewById(R.id.splash_background);
         Random random = new Random();
-        int num = random.nextInt(4);
+        int num = random.nextInt(3);
         int drawable = R.drawable.background01;
         switch (num){
             case 0:
@@ -37,9 +37,6 @@ public class SplashActivity extends Activity{
                 break;
             case 2:
                 drawable = R.drawable.background03;
-                break;
-            case 3:
-                drawable = R.drawable.background04;
                 break;
         }
         background.setImageResource(drawable);

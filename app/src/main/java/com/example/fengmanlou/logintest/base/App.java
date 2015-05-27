@@ -15,6 +15,7 @@ import com.avoscloud.leanchatlib.model.UserInfo;
 import com.example.fengmanlou.logintest.avobject.Case;
 import com.example.fengmanlou.logintest.avobject.Comment;
 import com.example.fengmanlou.logintest.avobject.Device;
+import com.example.fengmanlou.logintest.avobject.Doctor;
 import com.example.fengmanlou.logintest.avobject.Document;
 import com.example.fengmanlou.logintest.avobject.Hang;
 import com.example.fengmanlou.logintest.avobject.News;
@@ -36,6 +37,7 @@ public class App extends LitePalApplication{
     public void onCreate() {
         super.onCreate();
 
+        AVObject.registerSubclass(Doctor.class);
         AVObject.registerSubclass(Case.class);
         AVObject.registerSubclass(Device.class);
         AVObject.registerSubclass(Hang.class);

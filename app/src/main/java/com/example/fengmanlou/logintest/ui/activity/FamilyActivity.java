@@ -5,12 +5,17 @@ import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.text.TextUtils;
+import android.view.ContextMenu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.avos.avoscloud.AVException;
@@ -18,15 +23,23 @@ import com.avos.avoscloud.AVObject;
 import com.avos.avoscloud.AVQuery;
 import com.avos.avoscloud.AVUser;
 import com.avos.avoscloud.FindCallback;
+import com.avos.avoscloud.FollowCallback;
+import com.avos.avoscloud.GetCallback;
 import com.avos.avoscloud.im.v2.AVIMConversation;
 import com.avos.avoscloud.im.v2.callback.AVIMConversationCreatedCallback;
 import com.avoscloud.leanchatlib.activity.ChatActivity;
 import com.avoscloud.leanchatlib.controller.ChatManager;
 import com.example.fengmanlou.logintest.R;
+import com.example.fengmanlou.logintest.adapter.FamilyAdapter;
 import com.example.fengmanlou.logintest.adapter.UserImageAdapter;
 import com.example.fengmanlou.logintest.service.FamilyService;
+import com.example.fengmanlou.logintest.service.NewsService;
 import com.example.fengmanlou.logintest.util.Logger;
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.display.SimpleBitmapDisplayer;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
@@ -38,11 +51,15 @@ import java.util.concurrent.CountDownLatch;
  */
 public class FamilyActivity extends Activity{
     private ListView listView;
-    private UserImageAdapter adapter;
+    private FamilyAdapter adapter;
     public volatile List<AVUser> avUserList;
-    private String otherId;
+    public List<AVUser> familyList;
+    private String otherId; //表示其他用户的nickname！
     private Dialog progressDialog;
+    private List<String> objectIdList;
+    private String otherObjectId;
     private static final int DELETE_HOME =1;
+    private TextView name_textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,8 +67,11 @@ public class FamilyActivity extends Activity{
         setContentView(R.layout.activity_family);
         setTitle("家庭群组");
         listView = (ListView) findViewById(android.R.id.list);
+        name_textView = (TextView) findViewById(R.id.user_items_nickname);
         registerForContextMenu(listView);
         InitListener();
+
+        objectIdList = new ArrayList<>();
         new RemoteDataTask().execute();
     }
 
@@ -74,6 +94,10 @@ public class FamilyActivity extends Activity{
             });*/
 
             avUserList = FamilyService.findFamilies();
+            for (AVUser avUser : avUserList){
+                objectIdList.add(avUser.getObjectId());
+            }
+            Logger.d("objectIdList : "+objectIdList);
 
             return null;
         }
@@ -94,7 +118,7 @@ public class FamilyActivity extends Activity{
         protected void onPostExecute(Void result) {
             // 展现ListView
             Logger.d("avUserList : "+avUserList);
-            adapter = new UserImageAdapter(FamilyActivity.this,avUserList);
+            adapter = new FamilyAdapter(FamilyActivity.this,objectIdList);
             listView.setAdapter(adapter);
         }
     }
@@ -104,9 +128,26 @@ public class FamilyActivity extends Activity{
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (avUserList.get(position).getString("nickname") != null) {
-                    otherId = avUserList.get(position).getString("nickname");
+
+                otherObjectId = objectIdList.get(position); //获得其他用户的objectId
+
+                if (otherObjectId != null){
+
+                    GetCallback<AVObject> getCallback = new GetCallback<AVObject>() {
+                        @Override
+                        public void done(AVObject avObject, AVException e) {
+                            if (e == null) {
+                                 otherId = avObject.getString("nickname");
+                                //  Log.i("hys","nickname : "+avObject.getString("nickname"));
+                            } else {
+                                e.getMessage();
+                            }
+                        }
+                    };
+                    NewsService.fetchUserById(otherObjectId, getCallback);
+
                 }
+
                 Logger.d("otherId : " + otherId);
                 final ChatManager chatManager = ChatManager.getInstance();
                 chatManager.fetchConversationWithUserId(otherId, new AVIMConversationCreatedCallback() {
@@ -126,4 +167,37 @@ public class FamilyActivity extends Activity{
         });
     }
 
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        menu.add(0, DELETE_HOME, 0, "删除群组");
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case DELETE_HOME:
+                AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+
+                // 把这个用户添加到家庭群组中
+                final AVUser user = avUserList.get(info.position); //获得被操作的User
+                AVUser curUser = AVUser.getCurrentUser();
+
+                curUser.unfollowInBackground(user.getObjectId(), new FollowCallback() {
+                    @Override
+                    public void done(AVObject avObject, AVException e) {
+                        if (e == null) {
+                            Toast.makeText(FamilyActivity.this, "删除成功", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    protected void internalDone0(Object o, AVException e) {
+                        Toast.makeText(FamilyActivity.this, "删除成功", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+        }
+        return super.onContextItemSelected(item);
+    }
 }
